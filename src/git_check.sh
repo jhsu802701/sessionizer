@@ -4,6 +4,8 @@
 
 sh test_app.sh
 
+sh outline-short.sh
+
 echo '----------'
 echo 'git status'
 git status
