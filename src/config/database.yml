@@ -1,11 +1,19 @@
+# NOTE: The config/database.yml file is different for the
+# ruby_on_racetracks branch.  In this branch, no username or
+# password is specified.  This allows the command 
+# "bundle exec rake app:make_believe" to work.
+
+# The configuration of the master branch requires that your OS
+# username be "vagrant".  If your OS username is anything else, the
+# "bundle exec rake app:make_believe" command won't work, and you
+# will be unable to seed the database.
+
 default: &default
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: vagrant
-  password: 
 
 development:
   <<: *default

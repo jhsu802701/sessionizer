@@ -2,10 +2,14 @@
 
 sh pg-start.sh
 
-echo '--------------------'
-echo 'rails db:schema:load'
-rails db:schema:load
+echo '----------------------'
+echo 'rails db:migrate:reset'
+rails db:migrate:reset
 
 echo '-------------'
 echo 'rails db:seed'
 rails db:seed
+
+echo '---------------------------------'
+echo 'bundle exec rake app:make_believe'
+bundle exec rake app:make_believe
