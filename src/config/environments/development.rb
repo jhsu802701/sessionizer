@@ -1,4 +1,8 @@
 Rails.application.configure do
+  # BEGIN: needed for email confirmations
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # END: needed for email confirmations
+
   # BEGIN: mailcatcher configuration
   # From http://mailcatcher.me/
   config.action_mailer.delivery_method = :smtp

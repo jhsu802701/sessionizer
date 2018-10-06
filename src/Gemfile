@@ -58,6 +58,14 @@ group :development, :test do
   gem 'coveralls', require: false
 end
 
+
+# BEGIN: Capybara enhancements
+group :test do
+  gem 'capybara-email', '3.0.1'
+  gem 'capybara-slow_finder_errors', '0.1.4'
+end
+# END: Capybara enhancements
+
 group :test do
   gem 'shoulda-matchers'
   gem "factory_girl_rails", "~> 4.0"

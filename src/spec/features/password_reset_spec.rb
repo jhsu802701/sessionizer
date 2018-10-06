@@ -22,11 +22,27 @@ feature 'Forgotten password feature' do
     end
 
     scenario 'Registered user can reset password' do
+      clear_emails # Clear the message queue
       visit root_url
       click_link 'Forgot Password?'
       expect(page).to have_selector('h1', text: 'Reset Password')
       expect(page).to have_content 'Please enter your email address below and then press "Reset Password".'
       fill_in 'email', with: 'joe@example.com'
+      click_button 'Reset Password'
+      
+      open_email('joe@example.com')
+      expect(current_email).to have_selector('h1', text: 'Password Reset Instructions')
+      expect(current_email).to have_content 'A request to reset your password has been made.'
+      expect(current_email).to have_content 'If you did not make this request, simply ignore this email.'
+      expect(current_email).to have_content 'If you did make this request, please follow the link below.'
+      current_email.click_link 'Reset Password!'
+
+      expect(page).to have_selector('h1', text: 'Update your password')
+      expect(page).to have_content 'Please enter the new password below and then press "Update Password".'
+      fill_in 'password', with: 'Daytona 500'
+      # click_button 'Update Password'
+
+      clear_emails # Clear the message queue
     end
   end
 end
