@@ -36,6 +36,12 @@ describe Admin::SessionsController do
         expect(response).to be_successful
       end
     end
+
+    describe 'delete' do
+      it 'should be deletable' do
+        expect { delete :destroy, params: { id: session } }.to change(Session, :count).by(-1)
+      end
+    end
   end
 
   describe "create" do

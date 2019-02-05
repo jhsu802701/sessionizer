@@ -46,6 +46,10 @@ class Admin::SessionsController < Admin::AdminController
     end
   end
 
+  def destroy
+    @session.destroy
+  end
+
   private
 
   def session_params
