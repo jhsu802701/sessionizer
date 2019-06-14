@@ -98,11 +98,11 @@ GEM
       actionpack (>= 3.2.13)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    haml (5.0.3)
+    haml (5.0.4)
       temple (>= 0.8.0)
       tilt
     i18n (0.8.6)
-    icalendar (1.5.4)
+    icalendar (2.4.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -240,7 +240,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    temple (0.8.0)
+    temple (0.8.1)
     term-ansicolor (1.6.0)
       tins (~> 1.0)
     thor (0.19.4)
@@ -279,8 +279,8 @@ DEPENDENCIES
   fancybox2-rails
   ffaker
   formtastic
-  haml
-  icalendar (~> 1.5.4)
+  haml (~> 5.0.4)
+  icalendar (~> 2.4)
   jbuilder (~> 2.0)
   jquery-rails
   nokogiri
@@ -305,7 +305,7 @@ DEPENDENCIES
   unicorn
 
 RUBY VERSION
-   ruby 2.4.2p198
+   ruby 2.6.3p62
 
 BUNDLED WITH
-   1.16.2
+   1.17.2
